@@ -42,7 +42,7 @@ Execute as a root user ./mountFAT32 <device>
 ex. ./mountFAT32 /dev/sdd1 to "pseudo" mount the volume and create a hidden binary file
 for tracking the device and dir level.
 
-This will check the volume if it is clean and according to Microsoft standarts.
+This will verify the volume for errors and compliance with Microsoft standards.
 output example:
 
 mounted: 		FAT32   
