@@ -1,0 +1,56 @@
+Execute as a root user ./readFat32Bpb <device> to read the Bios Parameter Block of the Fat32 device
+ex. ./readFat32Bpb /dev/sdd1
+Output example:
+██████████████████████████████████████████████████████████████████
+		FAT32 BPB information table.
+██████████████████████████████████████████████████████████████████
+bytesPerSector:		0x200			512 bytes
+Sectors per cluster:	0x8			8
+Bytes per Cluster:	0x1000			4096 bytes
+Reserved Sec count:	0x476			584704 bytes
+Total FAT32 Sectors:	0x775000		4003463168 bytes
+No FATs:		2
+Size of one FAT:	0x1dc5			3901952 bytes
+Size of both FATs:	0x3b8a			7803904 bytes
+Required FAT size:	0x1dc4			3901440 bytes
+Root exntry count:	0
+rootCluster:		0x2
+firstDataSector:	0x4000			8388608 bytes
+backupBootSector:	6
+OEM-name:		MSDOS5.0
+volumeLabel: 		NO NAME    
+volumeID:		0x566b102a
+bootSignature:		0x29
+extFlags:		0
+FSVersion:		0
+FSInfo:			1
+fileSystemType: 	FAT32   
+FSI_LeadSig:		41615252
+FSI_StrucSig:		61417272
+FSI_TrailSig:		aa550000
+FSI_Free_Count:		0xedef4
+Free FAT clusters: 	0xedef2
+FSI_Nxt_Free:		0x1e5			485 decimal
+██████████████████████████████████████████████████████████████████
+The volume is clean!
+No disk I/O errors!
+██████████████████████████████████████████████████████████████████
+
+
+Execute as a root user ./mountFAT32 <device> ex. ./mountFAT32 /dev/sdd1 to "pseudo" mount the volume and create a hidden bimary file
+for tracking the device and dir level.
+This will check the volume if it is clean and according to Microsoft standarts.
+output example:
+mounted: 		FAT32   
+OEM-name:		MSDOS5.0  VolumeLabel: NO NAME    
+The volume is clean!	no disk I/O errors!
+
+Once the FS is mounted and checked you can run the commands:
+./pwdir, ./lsdir, ./cdir <directory name>, ./cdir .., or cdir /
+./catF <filename> to cat a txt file.
+
+
+
+
+
+
