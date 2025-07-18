@@ -1,0 +1,7 @@
+to compile the readFat32Bpb.c or mountFAT32.c execute:
+gcc readFat32Bpb.c -o readFat32Bpb
+
+to compile the changeDirectory, catAFile, lsDirectory execute:
+make
+if you want to clean execute make clean.
+Enjoy.
